@@ -46,7 +46,8 @@ public class Calc {
             if (!operator.equals("*")) {
                 break;
             }
-            curNum *= Integer.parseInt(split[++curIndex]);
+            curIndex++;
+            curNum *= calParentheses();
             curIndex++;
         }
         return curNum;
@@ -57,7 +58,8 @@ public class Calc {
         if (curStr.equals("(")) {
             curIndex++;
             return addOrSub();
-        } else if (curStr.equals("-(")) {
+        }
+        if (curStr.equals("-(")) {
             curIndex++;
             return addOrSub() * -1;
         }
