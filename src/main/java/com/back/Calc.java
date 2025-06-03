@@ -11,7 +11,7 @@ public class Calc {
     static int curIndex;
 
     public static int run(String input) {
-        split = input.split(" ");
+        split = input.replaceAll("[()]", "").split(" ");
         curIndex = 0;
         return addOrSub();
     }
