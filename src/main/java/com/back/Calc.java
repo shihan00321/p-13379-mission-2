@@ -57,6 +57,9 @@ public class Calc {
         if (curStr.equals("(")) {
             curIndex++;
             return addOrSub();
+        } else if (curStr.equals("-(")) {
+            curIndex++;
+            return addOrSub() * -1;
         }
         return Integer.parseInt(curStr);
     }
